@@ -1,0 +1,9 @@
+from scipy.integrate import quad
+import numpy as np
+r =int(input("enter radius in cm: "))
+def semicircle(x):
+    return np.sqrt(r**2 - x**2)
+
+area, error = quad(semicircle, -r, r)
+total_area = 2 * area
+print(f"Area of the circle with radius {r} is {total_area:.2f} cm" )
